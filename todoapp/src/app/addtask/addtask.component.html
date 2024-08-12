@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Add Task</h2>
+        <form [formGroup]="userForm">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="dropdown1" class="form-label">Assigned To</label>
+                    <select class="form-select" formControlName="AssignedTO">
+                        <option selected>Select an option</option>
+                        <option value="User 1">User 1</option>
+                        <option value="User 2">User 2</option>
+                        <option value="User 3">User 3</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="dropdown2" class="form-label">Status</label>
+                    <select class="form-select" formControlName="Status">
+                        <option selected>Select Status</option>
+                        <option value="Completed">Completed</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Not Started">Not Started</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="datePicker" class="form-label">Due Date</label>
+                    <input type="date" class="form-control" formControlName="DueDate">
+                </div>
+                <div class="col-md-6">
+                    <label for="dropdown3" class="form-label">Priority</label>
+                    <select class="form-select"  formControlName="Priority">
+                        <option selected>Select Priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Normal">Normal</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+             
+            </div>
+
+            <div class="row mb-3">
+                
+                <div class="col-md-12">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" rows="3" formControlName="Comments"></textarea>
+                </div>
+            </div>
+
+            <!-- Footer with buttons -->
+            <div class="d-flex justify-content-end mt-4">
+                <button type="button" class="btn btn-secondary me-4">Cancel</button>
+                <button type="submit" class="btn btn-primary me-4" (click)="addUser()">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
